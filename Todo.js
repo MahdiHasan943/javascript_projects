@@ -59,7 +59,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
     <div class="bg-white hover:bg-[#eeffec] hover:border-[#eeffac] hover:border-3 flex justify-between items-center w-full min-h-[80px] shadow-2xl px-2 rounded-2xl border border-[#ededed]">
       <div class="one flex gap-4 items-center">
         <div class="bg-[#72d479] w-[30px] h-[30px] max-w-[30px] max-h-[30px] p-1 rounded-full">
-          <img class="w-[20px] h-[20px]" src="/checked.png" alt="">
+          <img class="w-[20px] h-[20px]" src="checked.png" alt="">
         </div>
         <div class="flex max-w-[150px] flex-col gap-0">
           <p class="text-[10px] m-0 p-0 text-[#ddd]">${dateTitle}</p>
@@ -68,10 +68,10 @@ document.getElementById("form").addEventListener("submit", (event) => {
       </div>
       <div class="two flex items-center w-[80px] h-[80px] gap-4">
         <div class="bg-[#ffe4ec] p-1 rounded-full edit-button">
-          <img src="/edit-3-svgrepo-com.svg" alt="">
+          <img src="edit-3-svgrepo-com.svg" alt="">
         </div>
         <div class="bg-[#ff9999] p-1 rounded-full delete-button">
-          <img src="/delete-button-svgrepo-com.svg" alt="">
+          <img src="delete-button-svgrepo-com.svg" alt="">
         </div>
       </div>
     </div>
