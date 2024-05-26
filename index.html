@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Todo app">
+    <meta name="description" content="Todo app practice">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Todo App</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            background-color: #000319;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23bbaece' fill-opacity='0.07' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .card {
+    background-color: white;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 20px; /* Adjust as needed */
+    margin: 20px; /* Adjust as needed */
+}
+.modal_hidden {
+        display: none; /* Hide the modal */
+     
+        transition: opacity 1s ease; /* Add transition for opacity with longer duration */
+    }
+
+    .modal {
+        opacity: 1; /* Fully opaque */
+        pointer-events: auto; /* Show modal for user interactions */
+        transition: opacity 1s ease; 
+        
+    }
+    
+    .show{
+        display: none;
+    }
+        .show1 {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #72d479;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;        }
+    </style>
+</head>
+<body>
+    <main class="main  relative px-4 sm:px-16  flex justify-center items-center sm:py-10">
+         <form action="" class="bg-[#fff] relative rounded-2xl w-full sm:w-[350px] mx-auto min-h-[450px]  ">
+              <div id="card" class="py-5 flex flex-col gap-4 justicy-center items-center px-4">
+
+
+               
+
+
+
+              </div>
+              <div id="popup-message" class="show show1">Task added successfully!</div>
+              <div id="error-message" class="show show1">Cannot add more than 3 tasks!</div>
+
+            <div class="absolute bottom-[10px] left-1/2 transform -translate-x-1/2 text-center">
+                <button id="add_task" class="bg-[#ffba5f]   rounded-[999px] min-w-[300px] min-h-[53px]  mx-auto text-center">
+                  Add a new task
+                </button>
+            </div>
+
+
+         </form>
+
+         <div id="edit_m" class="modal  modal_hidden bg-[#fff] absolute  top-1/2 left-1/2  card transform -translate-y-1/2 -translate-x-1/2  rounded-2xl w-full sm:w-[300px] mx-auto  min-h-[250px]  ">
+           <div class="flex justify-end ">
+          <div class="bg-[#f3f3f3] w-[30px] mt-[-10px] mr-[-10px] flex justify-center items-center h-[30px] rounded-full">
+            <button id="remove_modal" class="text-[18px] my-auto pt-0 mt-0 text-[#b8b8b8]">x</button>
+           
+          </div>
+         
+           </div>
+
+           <div  class="">
+            <p class="font-bold">                  Add a new task
+            </p>
+           <form action=""  id="edit_form" class=" py-5">
+            <input id="edit_task" required maxlength="30" type="text" name="task" placeholder="Name of task" class="w-full border-[#f1f1f1] border-t-0 border-b-[1.5px] border-l-0 border-r-0 py-3 px-2  outline-none">
+            <input id="edit_date" type="date" name="date" placeholder="Due Date" class="w-full mb-3 border-[#f1f1f1] border-t-0 border-b-[1.5px] border-l-0 border-r-0 py-3 px-2 outline-none">
+            <div class="absolute bottom-[5px] left-1/2 transform -translate-x-1/2 text-center">
+                <button id="update" class="bg-[#ffba5f]   rounded-[999px] min-w-[250px] min-h-[53px]  mx-auto text-center">
+                  update
+                </button>
+            </div>
+            
+           </form>
+           </div>
+         </div>
+
+
+         <div id="modal" class="modal  modal_hidden bg-[#fff] absolute  top-1/2 left-1/2  card transform -translate-y-1/2 -translate-x-1/2  rounded-2xl w-full sm:w-[300px] mx-auto  min-h-[250px]  ">
+            <div class="flex justify-end ">
+           <div class="bg-[#f3f3f3] w-[30px] mt-[-10px] mr-[-10px] flex justify-center items-center h-[30px] rounded-full">
+             <button id="remove_modal" class="text-[18px] my-auto pt-0 mt-0 text-[#b8b8b8]">x</button>
+            
+           </div>
+          
+            </div>
+ 
+            <div class="">
+             <p class="font-bold">                  Add a new task
+             </p>
+            <form action=""  id="form" class=" py-5">
+             <input id="task" required maxlength="30" type="text" name="task" placeholder="Name of task" class="w-full border-[#f1f1f1] border-t-0 border-b-[1.5px] border-l-0 border-r-0 py-3 px-2  outline-none">
+             <input id="date" type="date" name="date" placeholder="Due Date" class="w-full mb-3 border-[#f1f1f1] border-t-0 border-b-[1.5px] border-l-0 border-r-0 py-3 px-2 outline-none">
+             <div class="absolute bottom-[5px] left-1/2 transform -translate-x-1/2 text-center">
+                 <button id="add_task" class="bg-[#ffba5f]   rounded-[999px] min-w-[250px] min-h-[53px]  mx-auto text-center">
+                   Save
+                 </button>
+             </div>
+             
+            </form>
+            </div>
+          </div>
+         
+    </main>
+    
+    <script src="Todo.js"></script>
+</body>
+</html>
