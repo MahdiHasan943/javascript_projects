@@ -1,3 +1,4 @@
+//task modal
 document.getElementById("add_task").addEventListener("click", (event) => {
   event.preventDefault(); // Prevent the form from submitting and refreshing the page
 
@@ -18,12 +19,14 @@ document.getElementById("add_task").addEventListener("click", (event) => {
     }, 1000); // Delay adding modal_hidden class to allow transition to complete
   });
 });
-
+//function to get input value
 const inputValue = (id) => {
   const inputTask = document.getElementById(id);
   const value = inputTask.value;
   return value;
 };
+
+//submit task
 
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
@@ -31,6 +34,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
   const dateTitle = inputValue("date");
 
   const cards = document.getElementById("card");
+  // prevent add more than three
   const numberOfCards = cards.children.length;
 
   if (numberOfCards >= 3) {
@@ -47,6 +51,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
   }
 
   const cardId = `card-${numberOfCards + 1}`;
+  console.log(cardId);
   const div = document.createElement("div");
   div.classList.add("w-full");
   div.setAttribute("id", cardId);
