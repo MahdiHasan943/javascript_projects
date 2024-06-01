@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+<main class="py-4 px-4">
+    <h1 class="text-center text-4xl text-sky-500">Expense Tracker</h1>
+    <form id="form" class="flex flex-col py-5 items-center" action="">
+        <div class="w-full max-w-lg">
+            <label for="name" class="font-semibold">Name:</label>
+            <input id="name" placeholder="Name" class="w-full border border-1 border-gray-400 rounded-md py-1 px-4 mb-4" type="text">
+            <div class="flex items-center py-4 gap-4">
+                <label for="date" class="font-semibold">Date:</label>
+                <input type="date" id="date" class="border border-1 border-gray-400 rounded-md py-1 px-4">
+                <label for="amount" class="font-semibold">Amount:</label>
+                <input id="amount" type="number" class="border border-1 border-gray-400 rounded-md py-1 px-4">
+            </div>
+            <div class="text-center mx-auto">
+                <button id="submit" class="py-2 px-5 bg-green-500 rounded-lg text-white">Add Expense</button>
+            </div>
+        </div>
+    </form>
+    <div class="max-w-2xl mx-auto py-4 px-2 border border-gray-300 rounded-lg">
+        <table id="result" class="w-full bg-gray-50 border-collapse">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border border-gray-300 py-2 px-4 text-left">Name</th>
+                    <th class="border border-gray-300 py-2 px-4 text-left">Date</th>
+                    <th class="border border-gray-300 py-2 px-4 text-left">Amount</th>
+                    <th class="border border-gray-300 py-2 px-4 text-left">delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will be added here -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<script src="expanse.js"></script>
+</body>
+</html>
