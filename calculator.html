@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Calculator</title>
+</head>
+<body class="bg-slate-600">
+    <main class="flex h-screen w-full justify-center items-center py-4 px-4">
+        <div class="bg-slate-800 w-full p-4 sm:w-[330px]">
+            <input type="text" id="calculator_input" class="py-3 text-white px-5 w-full border border-slate-500 shadow-sm focus:outline-none outline-none rounded-md bg-slate-800" readonly>
+            <div class="flex gap-4 py-2 justify-between items-center">
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">7</button>
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">8</button>
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">9</button>
+                <button id="cancel" class="border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">C</button>
+                <button id="clear" class="border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">AC</button>
+            </div>
+            <div class="flex gap-4 py-2 justify-between items-center">
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">6</button>
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">5</button>
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">4</button>
+                <button class="operator border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]" data-operator="/">/</button>
+                <button class="operator border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]" data-operator="*">*</button>
+            </div>
+            <div class="flex gap-4 py-2 justify-between items-center">
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">3</button>
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">2</button>
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">1</button>
+                <button class="operator border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]" data-operator="-">-</button>
+                <button class="operator border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]" data-operator="+">+</button>
+            </div>
+            <div class="flex gap-4 py-2 justify-between items-center">
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">.</button>
+                <button class="number border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">0</button>
+                <button class="empty border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]"></button>
+                <button class="operator border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]" data-operator="%">%</button>
+                <button id="result" class="border border-slate-500 hover:scale-[1.1] duration-300 delay-100 ease-in shadow-md rounded-md text-white py-2 w-[46px] h-[46px]">=</button>
+            </div>
+        </div>
+    </main>
+    <script src="calculator.js"></script>
+</body>
+</html>
